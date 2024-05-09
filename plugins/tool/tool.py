@@ -145,8 +145,8 @@ class Tool(Plugin):
             "request_timeout": request_timeout if request_timeout else conf().get("request_timeout", 120),
             "temperature": kwargs.get("temperature", 0),  # llm 温度，建议设置0
             # LLM配置相关
-            "llm_api_key": conf().get("open_ai_api_key", ""),  # 如果llm api用key鉴权，传入这里
-            "llm_api_base_url": conf().get("open_ai_api_base", "https://api.openai.com/v1"),  # 支持openai接口的llm服务地址前缀
+            "llm_api_key": conf().get("linkai_api_key", ""),  # 如果llm api用key鉴权，传入这里
+            "llm_api_base_url": conf().get("linkai_api_base", "https://api.link-ai.tech"),  # 支持openai接口的llm服务地址前缀
             "deployment_id": conf().get("azure_deployment_id", ""),  # azure openai会用到
             # note: 目前tool暂未对其他模型测试，但这里仍对配置来源做了优先级区分，一般插件配置可覆盖全局配置
             "model_name": tool_model_name if tool_model_name else conf().get("model", const.GPT35),
